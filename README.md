@@ -16,7 +16,7 @@ kubectl apply -f https://raw.githubusercontent.com/sematext/sematext-operator/ma
 
 ## Settings
 
-This operator, uses the same options as the [Helm Chart](https://hub.helm.sh/charts/stable/sematext-agent), please take a look to all the options in the following table:
+This operator uses all the same options as the [Sematext Agent Helm Chart](https://hub.helm.sh/charts/stable/sematext-agent), please take a look to all the options in the following table:
 
 |             Parameter            |            Description            |                  Default                  |
 |----------------------------------|-----------------------------------|-------------------------------------------|
@@ -58,7 +58,7 @@ spec:
 
 Once you have created the above resource, you can apply this file with `kubectl apply -f`.
 
-And then you can see you pods with the Sematext Agent deployed:
+Then you can see you pods with the Sematext Agent deployed:
 
 ```sh
 sematext-operator-58565cbf84-shbwx                                1/1     Running       0          3m
