@@ -56,6 +56,8 @@ spec:
   logsToken: YOUR_LOGS_TOKEN
 ```
 
+**NOTE:** You need to create [a new Docker app in Sematext Cloud](https://apps.sematext.com/ui/integrations/create/docker) to get relevant tokens.
+
 Once you have created the above resource, you can apply this file with `kubectl apply -f`.
 
 Then you can see you pods with the Sematext Agent deployed:
