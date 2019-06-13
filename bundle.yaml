@@ -54,8 +54,7 @@ spec:
       serviceAccountName: sematext-operator
       containers:
         - name: sematext-operator
-          # Replace this with the built image name
-          image: docker.io/sematext/sematext-operator:1.0.0
+          image: docker.io/sematext/sematext-operator:1.0.8
           ports:
           - containerPort: 60000
             name: metrics

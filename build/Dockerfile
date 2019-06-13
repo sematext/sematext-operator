@@ -1,7 +1,7 @@
-FROM quay.io/operator-framework/helm-operator:v0.6.0
+FROM quay.io/operator-framework/helm-operator:v0.8.1
 
 LABEL name="sematext-operator"
-LABEL summary=""
+LABEL summary="Sematext Agent collects metrics about hosts (CPU, memory, disk, network, processes), containers (both Docker and rkt) and orchestrator platforms and ships that to Sematext Cloud."
 LABEL description="This operator installs the Sematext Agent to all nodes in your cluster via a DaemonSet."
 LABEL vendor="Sematext"
 

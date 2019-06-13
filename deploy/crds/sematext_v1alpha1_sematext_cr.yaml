@@ -3,5 +3,4 @@ kind: SematextAgent
 metadata:
   name: example-sematextagent
 spec:
-  sematext:
-    accessKey: ACCESS_KEY
+  containerToken: YOUR_CONTAINER_TOKEN
