@@ -22,6 +22,7 @@ This operator uses all the same options as the [Sematext Agent Helm Chart](https
 |----------------------------------|-----------------------------------|-------------------------------------------|
 | `containerToken`                 | Sematext Container token          | `Nil` Provide your Container token        |
 | `logsToken`                      | Sematext Logs token               | `Nil` Provide your Logs token             |
+| `infraToken`                     | Sematext Infra token              | `Nil` Provide your Infra token            |
 | `region`                         | Sematext region                   | `US` Sematext US or EU region             |
 | `agent.image.repository`         | The image repository              | `sematext/agent`                          |
 | `agent.image.tag`                | The image tag                     | `latest`                                  |
@@ -43,7 +44,7 @@ This operator uses all the same options as the [Sematext Agent Helm Chart](https
 | `tolerations`                    | Tolerations                       | `[]`                                      |
 | `nodeSelector`                   | Node selector                     | `{}`                                      |
 
-For example, if you want to deploy Sematext Agent in EU region and provide YOUR_CONTAINER_TOKEN and YOUR_LOGS_TOKEN, create the following resource:
+For example, if you want to deploy Sematext Agent in EU region, create the following resource:
 
 ```yaml
 apiVersion: sematext.com/v1alpha1
@@ -54,6 +55,7 @@ spec:
   region: "EU"
   containerToken: YOUR_CONTAINER_TOKEN
   logsToken: YOUR_LOGS_TOKEN
+  infraToken: YOUR_INFRA_TOKEN
 ```
 
 **NOTE:** You need to create [a new Docker app in Sematext Cloud](https://apps.sematext.com/ui/integrations/create/docker) to get relevant tokens.
