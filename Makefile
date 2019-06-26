@@ -49,6 +49,6 @@ redhat-package:
 		redhat-certification/sematext-operator.v$(VERSION).clusterserviceversion.yaml \
 		redhat-certification/sematext.crd.yaml \
 		redhat-certification/sematext.package.yaml
-	rm	redhat-certification/sematext*
-    git add redhat-certification
-    git commit -m "New Sematext Operator RH certified version $(VERSION)"
+	rm redhat-certification/sematext*
+	git add redhat-certification
+	git commit -m "New Sematext Operator RH certified version $(VERSION)"
