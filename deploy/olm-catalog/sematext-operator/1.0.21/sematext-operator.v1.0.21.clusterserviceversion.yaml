@@ -95,8 +95,8 @@ spec:
   - containers
   - ebpf
   maintainers:
-  - name: Alen Komljen
-    email: alen.komljen@sematext.com
+  - name: Ciprian Hacman
+    email: ciprian.hacman@sematext.com
   provider:
     name: Sematext
   maturity: stable
@@ -156,7 +156,6 @@ spec:
                       value: "sematext-operator"
     strategy: deployment
   version: 1.0.21
-  replaces: sematext-operator.v1.0.9
   installModes:
     - type: OwnNamespace
       supported: true

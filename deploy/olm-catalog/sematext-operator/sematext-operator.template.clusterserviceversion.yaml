@@ -60,9 +60,9 @@ spec:
     | `logagent.image.pullPolicy`      | Image pull policy                 | `Always`                                  |
     | `logagent.resources`             | Logagent resources                | `{}`                                      |
     | `logagent.extraHostVolumeMounts` | Extra mounts                      | `{}`                                      |
-    | `customUrl.serverBaseUrl`        | Custom Base URL                   | `Nil`                                     |
-    | `customUrl.logsReceiverUrl`      | Custom Logs receiver URL          | `Nil`                                     |
-    | `customUrl.eventsRecieverUrl`    | Custom Event receiver URL         | `Nil`                                     |
+    | `serverBaseUrl`                  | Custom Base URL                   | `Nil`                                     |
+    | `logsReceiverUrl`                | Custom Logs receiver URL          | `Nil`                                     |
+    | `eventsRecieverUrl`              | Custom Event receiver URL         | `Nil`                                     |
     | `serviceAccount.create`          | Create a service account          | `true`                                    |
     | `serviceAccount.name`            | Service account name              | `Nil` Defaults to chart name              |
     | `rbac.create`                    | RBAC enabled                      | `true`                                    |
@@ -95,8 +95,8 @@ spec:
   - containers
   - ebpf
   maintainers:
-  - name: Alen Komljen
-    email: alen.komljen@sematext.com
+  - name: Ciprian Hacman
+    email: ciprian.hacman@sematext.com
   provider:
     name: Sematext
   maturity: stable
@@ -156,7 +156,6 @@ spec:
                       value: "sematext-operator"
     strategy: deployment
   version: REPLACE_VERSION
-  replaces: sematext-operator.vREPLACE_PREVIOUS_VERSION
   installModes:
     - type: OwnNamespace
       supported: true
