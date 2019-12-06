@@ -1,6 +1,6 @@
 IMAGE = docker.io/sematext/sematext-operator
 RH_CERTIFIED_IMAGE = registry.connect.redhat.com/sematext/sematext-operator
-VERSION = 1.0.9
+VERSION = 1.0.21
 PREVIOUS_VERSION = $(shell ls -td deploy/olm-catalog/sematext-operator/*/ | head -n1 | cut -d"/" -f4)
 
 .PHONY: build create-bundle
