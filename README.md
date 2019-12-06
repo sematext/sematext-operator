@@ -35,9 +35,9 @@ This operator uses all the same options as the [Sematext Agent Helm Chart](https
 | `logagent.image.pullPolicy`      | Image pull policy                 | `Always`                                  |
 | `logagent.resources`             | Logagent resources                | `{}`                                      |
 | `logagent.extraHostVolumeMounts` | Extra mounts                      | `{}`                                      |
-| `customUrl.serverBaseUrl`        | Custom Base URL                   | `Nil`                                     |
-| `customUrl.logsReceiverUrl`      | Custom Logs receiver URL          | `Nil`                                     |
-| `customUrl.eventsRecieverUrl`    | Custom Event receiver URL         | `Nil`                                     |
+| `serverBaseUrl`                  | Custom Base URL                   | `Nil`                                     |
+| `logsReceiverUrl`                | Custom Logs receiver URL          | `Nil`                                     |
+| `eventsRecieverUrl`              | Custom Event receiver URL         | `Nil`                                     |
 | `serviceAccount.create`          | Create a service account          | `true`                                    |
 | `serviceAccount.name`            | Service account name              | `Nil` Defaults to chart name              |
 | `rbac.create`                    | RBAC enabled                      | `true`                                    |
