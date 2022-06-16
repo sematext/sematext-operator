@@ -8,6 +8,8 @@ It installs the Sematext Agent to all nodes in your cluster via a `DaemonSet` re
 
 ## Quickstart
 
+You need to create [an Infra App in Sematext Cloud](https://apps.sematext.com/ui/monitoring-create/app/infra) to get your infra token.
+
 To run the operator and its dependencies run the following command:
 
 ```sh
