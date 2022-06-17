@@ -2,13 +2,13 @@
 
 The Sematext Operator for Kubernetes provides an easy way to deploy Sematext Agent.
 
-Sematext Agent collects metrics about hosts (CPU, memory, disk, network, processes), containers (both Docker and rkt) and orchestrator platforms, and ships that to [Sematext Cloud](https://sematext.com/cloud). Sematext Cloud is available in the US and EU regions.
+Sematext Agent collects metrics about hosts (CPU, memory, disk, network, processes, etc.), containers (Docker, Podman, containerd, etc.) and orchestrator platforms, and ships that to [Sematext Cloud](https://sematext.com/cloud). Sematext Cloud is available in the US and EU regions.
 
 It installs the Sematext Agent to all nodes in your cluster via a `DaemonSet` resource.
 
 ## Quickstart
 
-You need to create [an Infra App in Sematext Cloud](https://apps.sematext.com/ui/monitoring-create/app/infra) to get your infra token.
+You need to create an Infra App in [Sematext Cloud US](https://apps.sematext.com/ui/monitoring-create/app/infra) or [Sematext Cloud EU](https://apps.eu.sematext.com/ui/monitoring-create/app/infra) to get your Infra App Token.
 
 To run the operator and its dependencies run the following command:
 
@@ -38,4 +38,4 @@ kubectl delete -f https://raw.githubusercontent.com/sematext/sematext-operator/m
 
 ## Docs
 
-For more details refer to our [official documentation](https://sematext.com/docs/agents/sematext-agent/kubernetes/operator/).
+For more details refer to our [official Kubernetes Operator documentation](https://sematext.com/docs/agents/sematext-agent/kubernetes/operator/).
