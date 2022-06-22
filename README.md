@@ -2,7 +2,7 @@
 
 The Sematext Operator for Kubernetes provides an easy way to deploy Sematext Agent.
 
-Sematext Agent collects metrics about hosts (CPU, memory, disk, network, processes, etc.), containers (Docker, Podman, containerd, etc.) and orchestrator platforms, and ships that to [Sematext Cloud](https://sematext.com/cloud). Sematext Cloud is available in the US and EU regions.
+Sematext Agent collects metrics about hosts (CPU, memory, disk, network, processes, etc.), containers (Docker, Podman, containerd, cri-o and rkt) and orchestrator platforms, and ships that to [Sematext Cloud](https://sematext.com/cloud). Sematext Cloud is available in the US and EU regions.
 
 It installs the Sematext Agent to all nodes in your cluster via a `DaemonSet` resource.
 
