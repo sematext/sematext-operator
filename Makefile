@@ -1,13 +1,14 @@
-IMAGE = docker.io/sematext/sematext-operator
+IMAGE = sematext/sematext-operator
 RH_CERTIFIED_IMAGE = registry.connect.redhat.com/sematext/sematext-operator
-VERSION = 1.0.33
+VERSION = 1.0.46
 PREVIOUS_VERSION = $(shell ls -td deploy/olm-catalog/sematext-operator/*/ | head -n1 | cut -d"/" -f4)
 
 .PHONY: build create-bundle
 
 build:
+	rm -rf helm-charts
 	helm fetch sematext/sematext-agent --version $(VERSION) --untar --untardir helm-charts/
-	operator-sdk build $(IMAGE):$(VERSION)
+	make docker-build
 	rm -rf helm-charts/sematext-agent
 
 create-bundle:
@@ -52,3 +53,7 @@ redhat-package:
 	rm redhat-certification/sematext*
 	git add redhat-certification
 	git commit -m "New Sematext Operator RH certified version $(VERSION)"
+
+docker-build: ## Build docker image with the manager.
+	docker build -t $(IMAGE):$(VERSION) .
+
