@@ -55,5 +55,5 @@ redhat-package:
 	git commit -m "New Sematext Operator RH certified version $(VERSION)"
 
 docker-build: ## Build docker image with the manager.
-	docker build -t $(IMAGE):$(VERSION) .
+	docker build -t $(IMAGE):$(VERSION) -f build/Dockerfile .
 
