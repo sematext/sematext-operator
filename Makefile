@@ -1,17 +1,18 @@
-IMAGE = docker.io/sematext/sematext-operator
+IMAGE = sematext/sematext-operator
 RH_CERTIFIED_IMAGE = registry.connect.redhat.com/sematext/sematext-operator
-VERSION = 1.0.33
+VERSION = 1.0.46
 PREVIOUS_VERSION = $(shell ls -td deploy/olm-catalog/sematext-operator/*/ | head -n1 | cut -d"/" -f4)
 
 .PHONY: build create-bundle
 
 build:
+	rm -rf helm-charts
 	helm fetch sematext/sematext-agent --version $(VERSION) --untar --untardir helm-charts/
-	operator-sdk build $(IMAGE):$(VERSION)
+	make docker-build
 	rm -rf helm-charts/sematext-agent
 
 create-bundle:
-	cat deploy/crds/sematext_v1alpha1_sematextagent_crd.yaml > bundle.yaml
+	cat deploy/crds/sematext_v1_sematextagent_crd.yaml > bundle.yaml
 	echo '---' >> bundle.yaml
 	cat deploy/serviceaccount.yaml >> bundle.yaml
 	echo '---' >> bundle.yaml
@@ -39,7 +40,7 @@ new-upstream: build create-bundle push operatorhub
 	git commit -m "New Sematext agent helm chart release $(VERSION)"
 
 redhat-package:
-	cp deploy/crds/sematext_v1alpha1_sematextagent_crd.yaml redhat-certification/sematext.crd.yaml
+	cp deploy/crds/sematext_v1_sematextagent_crd.yaml redhat-certification/sematext.crd.yaml
 	cp deploy/olm-catalog/sematext-operator/sematext-operator.template.clusterserviceversion.yaml redhat-certification/sematext-operator.v$(VERSION).clusterserviceversion.yaml
 	cp deploy/olm-catalog/sematext-operator/sematext.template.package.yaml redhat-certification/sematext.package.yaml
 	gsed -i "s/REPLACE_VERSION/$(VERSION)/" redhat-certification/sematext-operator.v$(VERSION).clusterserviceversion.yaml
@@ -52,3 +53,7 @@ redhat-package:
 	rm redhat-certification/sematext*
 	git add redhat-certification
 	git commit -m "New Sematext Operator RH certified version $(VERSION)"
+
+docker-build: ## Build docker image with the manager.
+	docker build -t $(IMAGE):$(VERSION) -f build/Dockerfile .
+

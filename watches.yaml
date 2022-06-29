@@ -1,5 +1,5 @@
 ---
-- version: v1alpha1
+- version: v1
   group: sematext.com
   kind: SematextAgent
   chart: /opt/helm/helm-charts/sematext-agent

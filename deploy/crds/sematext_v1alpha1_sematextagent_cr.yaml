@@ -1,6 +1,7 @@
-apiVersion: sematext.com/v1alpha1
+apiVersion: sematext.com/v1
 kind: SematextAgent
 metadata:
-  name: example-sematextagent
+  name: sematextagent
 spec:
-  containerToken: YOUR_CONTAINER_TOKEN
+  infraToken: YOUR_INFRA_TOKEN
+  region: <US or EU>

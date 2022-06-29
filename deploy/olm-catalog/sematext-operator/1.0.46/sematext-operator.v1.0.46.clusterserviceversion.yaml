@@ -1,7 +1,7 @@
 apiVersion: operators.coreos.com/v1alpha1
 kind: ClusterServiceVersion
 metadata:
-  name: sematext-operator.vREPLACE_VERSION
+  name: sematext-operator.v1.0.46
   namespace: placeholder
   annotations:
     capabilities: "Basic Install"
@@ -10,7 +10,7 @@ metadata:
     certified: "false"
     description: |-
       Full stack observability with Sematext Monitoring Platform!
-    containerImage: REPLACE_IMAGE:REPLACE_VERSION
+    containerImage: sematext/sematext-operator:1.0.46
     support: Sematext, Inc.
     repository: https://github.com/sematext/sematext-operator
     alm-examples: |-
@@ -138,7 +138,7 @@ spec:
               serviceAccountName: sematext-operator
               containers:
                 - name: sematext-operator
-                  image: REPLACE_IMAGE:REPLACE_VERSION
+                  image: sematext/sematext-operator:1.0.46
                   ports:
                   - containerPort: 60000
                     name: metrics
@@ -155,7 +155,7 @@ spec:
                     - name: OPERATOR_NAME
                       value: "sematext-operator"
     strategy: deployment
-  version: REPLACE_VERSION
+  version: 1.0.46
   installModes:
     - type: OwnNamespace
       supported: true
