@@ -11,15 +11,25 @@ spec:
     singular: sematextagent
   scope: Namespaced
   versions:
-  - name: v1
-    served: true
-    storage: true
-    schema:
-      openAPIV3Schema:
-        type: object
-        properties: {}
-    subresources:
-      status: { }
+    - name: v1
+      served: true
+      storage: true
+      subresources:
+        status: { }
+      schema:
+        openAPIV3Schema:
+          type: object
+          properties:
+            spec:
+              description: Your account data
+              type: object
+              properties:
+                infraToken:
+                  description: The Infra App token from your SC account
+                  type: string
+                region:
+                  description: The region where your account data is hosted. Can be EU or US
+                  type: string
 ---
 apiVersion: v1
 kind: ServiceAccount

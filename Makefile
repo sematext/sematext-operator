@@ -12,7 +12,7 @@ build:
 	rm -rf helm-charts/sematext-agent
 
 create-bundle:
-	cat deploy/crds/sematext_v1alpha1_sematextagent_crd.yaml > bundle.yaml
+	cat deploy/crds/sematext_v1_sematextagent_crd.yaml > bundle.yaml
 	echo '---' >> bundle.yaml
 	cat deploy/serviceaccount.yaml >> bundle.yaml
 	echo '---' >> bundle.yaml
@@ -40,7 +40,7 @@ new-upstream: build create-bundle push operatorhub
 	git commit -m "New Sematext agent helm chart release $(VERSION)"
 
 redhat-package:
-	cp deploy/crds/sematext_v1alpha1_sematextagent_crd.yaml redhat-certification/sematext.crd.yaml
+	cp deploy/crds/sematext_v1_sematextagent_crd.yaml redhat-certification/sematext.crd.yaml
 	cp deploy/olm-catalog/sematext-operator/sematext-operator.template.clusterserviceversion.yaml redhat-certification/sematext-operator.v$(VERSION).clusterserviceversion.yaml
 	cp deploy/olm-catalog/sematext-operator/sematext.template.package.yaml redhat-certification/sematext.package.yaml
 	gsed -i "s/REPLACE_VERSION/$(VERSION)/" redhat-certification/sematext-operator.v$(VERSION).clusterserviceversion.yaml
