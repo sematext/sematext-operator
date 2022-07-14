@@ -95,8 +95,8 @@ spec:
   - containers
   - ebpf
   maintainers:
-  - name: Ciprian Hacman
-    email: ciprian.hacman@sematext.com
+  - name: Pablo Beltran
+    email: pablo.beltrancasso@sematext.com
   provider:
     name: Sematext
   maturity: stable

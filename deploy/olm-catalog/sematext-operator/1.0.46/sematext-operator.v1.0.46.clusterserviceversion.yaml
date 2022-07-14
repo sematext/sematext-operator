@@ -10,7 +10,7 @@ metadata:
     certified: "false"
     description: |-
       Full stack observability with Sematext Monitoring Platform!
-    containerImage: sematext/sematext-operator:1.0.46
+    containerImage: docker.io/sematext/sematext-operator:1.0.46
     support: Sematext, Inc.
     repository: https://github.com/sematext/sematext-operator
     alm-examples: |-
@@ -95,8 +95,8 @@ spec:
   - containers
   - ebpf
   maintainers:
-  - name: Ciprian Hacman
-    email: ciprian.hacman@sematext.com
+  - name: Pablo Beltran
+    email: pablo.beltrancasso@sematext.com
   provider:
     name: Sematext
   maturity: stable
@@ -138,7 +138,7 @@ spec:
               serviceAccountName: sematext-operator
               containers:
                 - name: sematext-operator
-                  image: sematext/sematext-operator:1.0.46
+                  image: docker.io/sematext/sematext-operator:1.0.46
                   ports:
                   - containerPort: 60000
                     name: metrics
